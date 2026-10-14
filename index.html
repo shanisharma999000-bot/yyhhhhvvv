@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigma Loot</title>
+    <style>
+        body {
+            background-color: #2b1206;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .container {
+            background: linear-gradient(145deg, #421d0a, #2a1105);
+            border: 2px solid #ff7b0030;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #ffb700;
+            object-fit: cover;
+            display: block;
+        }
+        .online-badge {
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffb700;
+            color: #000;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .online-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ffaa;
+            margin: 15px 0 5px 0;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #ffb700;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: linear-gradient(90deg, #ffb700, #ff8800);
+            color: #000;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            width: 80%;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(255,153,0,0.4);
+        }
+        .ready-text {
+            font-size: 12px;
+            color: #aaa;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .time-box {
+            background: #220d04;
+            border: 1px solid #ff990040;
+            padding: 10px;
+            border-radius: 10px;
+            width: 45px;
+            text-align: center;
+        }
+        .time-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00ffaa;
+        }
+        .time-label {
+            font-size: 9px;
+            color: #aaa;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile Picture with ImgBB Link -->
+        <div class="profile-container">
+            <img src="https://ibb.co/zVRXfQHc" alt="Sigma Loot" class="profile-pic">
+            <div class="online-badge">
+                <span class="online-dot"></span> ONLINE
+            </div>
+        </div>
+        
+        <div class="title">SIGMA LOOT</div>
+        <div class="subtitle">Tips & Tricks</div>
+
+        <!-- Join Telegram Button -->
+        <a href="https://t.me/+dsXMZi2NVdk0N2E1" class="btn" id="joinBtn">✈️ Join Telegram</a>
+
+        <div class="ready-text">READY TO JOIN</div>
+
+        <!-- Timer -->
+        <div class="timer-container">
+            <div class="time-box">
+                <div class="time-number">00</div>
+                <div class="time-label">DAYS</div>
+            </div>
+            <div class="time-box">
+                <div class="time-number">00</div>
+                <div class="time-label">HOURS</div>
+            </div>
+            <div class="time-box">
+                <div class="time-number">00</div>
+                <div class="time-label">MINS</div>
+            </div>
+            <div class="time-box">
+                <div class="time-number" id="secs">05</div>
+                <div class="time-label">SECS</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 5 seconds automatic redirect script
+        let timeLeft = 5;
+        const secElement = document.getElementById("secs");
+        const telegramUrl = "https://t.me/+dsXMZi2NVdk0N2E1";
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            secElement.textContent = timeLeft < 10 ? "0" + timeLeft : timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                window.location.href = telegramUrl;
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
